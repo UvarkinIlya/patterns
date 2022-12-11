@@ -30,6 +30,7 @@ func (converter Converter) Convert(sourceFile *os.File, path, format string) (er
 	if !converter.isFormatSupport(format) {
 		return fmt.Errorf("Format not supported. ")
 	}
+
 	file, err := os.Create(fmt.Sprintf("%s.%s", path, format))
 	if err != nil {
 		return
